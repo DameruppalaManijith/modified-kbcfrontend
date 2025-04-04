@@ -1,25 +1,26 @@
-import logo from './logo.svg';
 import './App.css';
-
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import React from "react";
+import Admin from "./components/admin.jsx";
+import Waiting from "./components/main.jsx";
+import UserForm from "./components/userform.jsx";
+import Fastestfinger from "./components/FFF.jsx";
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  
+    return (
+      
+      
+      <BrowserRouter>
+          <Routes>
+              <Route path="/admin" element={<Admin />} />
+              <Route path="/waitingroom" element={<Waiting />} />
+              <Route path="/userform" element={<UserForm />}/>
+              <Route path="fastestfinger" element={<Fastestfinger />}/>
+          </Routes>
+      </BrowserRouter>
+      
   );
+  
 }
 
 export default App;
